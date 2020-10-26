@@ -10,13 +10,14 @@ class Arreglo{
     T *arreglo;
     size_t tam;
     size_t cont;
-    const static size_t MAX = 100;
+    const static size_t MAX = 1000;
 
 public:
     Arreglo();
     ~Arreglo();
     void insertarFinal(const T& v);
     void insertarInicio(const T& v);
+    void insertar(const T& v, size_t p);
     size_t size();
     int operator[](size_t p)
     {
@@ -58,6 +59,23 @@ void Arreglo<T>::insertarInicio(const T& v){
         expandir();
     }
     arreglo[cont] = v;
+    cont++;
+}
+
+template <class T>
+void Arreglo<T>::insertar(const T& v, size_t p){
+     if(p >= cont){
+         cout << "Posicion no valida" << endl;
+         return;
+     }
+     if(cont == tam){
+        //expandir arreglo
+        expandir();
+    }
+    for(size_t i = cont; i > p; i--){
+        arreglo[i] = arreglo[i-1];
+    }
+    arreglo[p] = v;
     cont++;
 }
 
