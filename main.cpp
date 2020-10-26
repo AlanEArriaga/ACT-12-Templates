@@ -11,6 +11,10 @@ int main()
     arreglo.insertarInicio("B");
     arreglo.insertarFinal("C");
     arreglo.insertarFinal("D");
+    arreglo.insertar("H",2);
+    arreglo.eliminarInicio();
+    arreglo.eliminarFinal();
+    arreglo.elminar(1);
     arreglo.mostrar();
     
     /*Arreglo <float> arreglo;
