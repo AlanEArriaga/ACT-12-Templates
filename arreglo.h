@@ -23,8 +23,10 @@ public:
     void eliminarInicio();
     void elminar(size_t p);
 
+    void mostrar();
+
     size_t size();
-    int operator[](size_t p)
+    T operator[](size_t p)
     {
         return arreglo[p];
     }
@@ -134,6 +136,14 @@ void Arreglo<T>::expandir()
     delete[] arreglo;
     arreglo = nuevo;
     tam = tam + MAX;
+}
+
+template <class T>
+void Arreglo<T>::mostrar(){
+
+    for(size_t i = 0; i < cont; i++){
+        cout<<arreglo[i]<<" ";
+    }
 }
 
 #endif 

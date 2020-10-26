@@ -5,7 +5,15 @@ using namespace std;
 
 int main()
 {
-    Arreglo <float> arreglo;
+    Arreglo <string> arreglo;
+
+    arreglo.insertarInicio("A");
+    arreglo.insertarInicio("B");
+    arreglo.insertarFinal("C");
+    arreglo.insertarFinal("D");
+    arreglo.mostrar();
+    
+    /*Arreglo <float> arreglo;
 
     for(size_t i = 0; i < 10; i++){
         arreglo.insertarFinal(i);
@@ -18,6 +26,6 @@ int main()
         cout <<arreglo[i]<< " ";
     }
 
-    cout << endl;
+    cout << endl;*/
     return 0;
 }
