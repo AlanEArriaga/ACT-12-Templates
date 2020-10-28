@@ -24,6 +24,7 @@ public:
     void elminar(size_t p);
     
     T* buscar(const T& v);
+    Arreglo<T*> buscarTodos(const T& v);
     void mostrar();
 
     size_t size();
@@ -134,6 +135,18 @@ T* Arreglo<T>::buscar(const T& v){
         }
     }
     return nullptr;
+}
+
+template <class T>
+Arreglo<T*> Arreglo<T>::buscarTodos(const T& v){
+    Arreglo<T*> ptrs;
+
+    for(size_t i = 0; i < cont; i++){
+        if(v == arreglo[i]){
+            ptrs.insertarFinal(&arreglo[i]);
+        }
+    }
+    return ptrs;
 }
 
 
