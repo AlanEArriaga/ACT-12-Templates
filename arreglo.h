@@ -22,13 +22,20 @@ public:
     void eliminarFinal();
     void eliminarInicio();
     void elminar(size_t p);
-
+    
+    T* buscar(const T& v);
     void mostrar();
 
     size_t size();
     T operator[](size_t p)
     {
         return arreglo[p];
+    }
+
+    friend Arreglo<T>& operator<<(Arreglo<T> &a, const T& v){
+        a.insertarFinal(v);
+
+        return a;
     }
     
 private:
@@ -117,6 +124,16 @@ void Arreglo<T>::elminar(size_t p){
         arreglo[i] = arreglo [i+1];
     }
     cont--;
+}
+
+template <class T>
+T* Arreglo<T>::buscar(const T& v){
+    for(size_t i = 0; i < cont; i++){
+        if(v == arreglo[i]){
+            return &arreglo[i];
+        }
+    }
+    return nullptr;
 }
 
 
