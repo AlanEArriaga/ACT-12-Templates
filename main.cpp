@@ -11,24 +11,16 @@ int main()
     Computadora c01("Windows", "Dell", 16, 500);
     Computadora c02("Ios", "Apple", 12, 700);
     Computadora c03("Linux", "Huawei", 8, 1000);
-    Computadora c04("Ubuntu", "HP", 8, 320);
+    Computadora c04("Windows", "HP", 8, 320);
     Computadora c05("Windows", "Acer", 4, 250);
 
     computadora << c01 << c02 << c03 << c04 << c05;
-    Computadora c06("Linux", "Huawei", 8, 1000);
-    Computadora *ptr = computadora.buscar(c06);
+    //Computadora c06("Linucs", "Huawei", 8, 1000);
+    Computadora c07("Windous", "Dell", 16, 500);
 
-    if(ptr != nullptr){
-        cout << *ptr << endl;
-    }
-    else{
-        cout << "Computadora no existe"<<endl;
-    }
-    /*
+    Arreglo<Computadora*> ptrs = computadora.buscarTodos(c07);
 
-    Arreglo<Computadora*> ptrs = computadora.buscarTodos(c04);*/
-
-    /*if(ptrs.size() > 0){
+    if(ptrs.size() > 0){
         for (size_t i = 0; i < ptrs.size(); i++)
         {
             Computadora *p = ptrs[i];
@@ -37,7 +29,20 @@ int main()
     }
     else{
         cout << "No existen coincidencias"<<endl;
+    }
+   
+   
+   /* Computadora *ptr = computadora.buscar(c06);
+
+    if(ptr != nullptr){
+        cout << *ptr << endl;
+    }
+    else{
+        cout << "Computadora no existe"<<endl;
     }*/
+    
+
+    
 
     /*Computadora *ptr = computadora.buscar(c04);
 
